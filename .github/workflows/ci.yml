@@ -131,10 +131,11 @@ jobs:
         with:
           run: cargo codspeed run
           mode: instrumentation
-          token: ${{ secrets.CODSPEED_TOKEN }}
+          token: ${{ secrets.CODSPEED_DEV_TOKEN }}
+          upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
 
   compat-integration-test-walltime:
-    runs-on: codspeed-macro
+    runs-on: codspeed-macro-codspeed-francois-dev
     strategy:
       matrix:
         package:
@@ -165,7 +166,8 @@ jobs:
         with:
           run: cargo codspeed run
           mode: walltime
-          token: ${{ secrets.CODSPEED_TOKEN }}
+          token: ${{ secrets.CODSPEED_DEV_TOKEN }}
+          upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
 
   musl-build-check:
     strategy:
