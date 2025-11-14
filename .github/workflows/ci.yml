@@ -5,6 +5,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -131,8 +135,9 @@ jobs:
         with:
           run: cargo codspeed run
           mode: instrumentation
-          token: ${{ secrets.CODSPEED_DEV_TOKEN }}
+          # token: ${{ secrets.CODSPEED_DEV_TOKEN }}
           upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
+          runner-version: '4.3.5-beta.1'
 
   compat-integration-test-walltime:
     runs-on: codspeed-macro-codspeed-francois-dev
@@ -166,8 +171,9 @@ jobs:
         with:
           run: cargo codspeed run
           mode: walltime
-          token: ${{ secrets.CODSPEED_DEV_TOKEN }}
+          # token: ${{ secrets.CODSPEED_DEV_TOKEN }}
           upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
+          runner-version: '4.3.5-beta.1'
 
   musl-build-check:
     strategy:
