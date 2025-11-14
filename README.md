@@ -23,4 +23,4 @@ This mono-repo contains the integration crates for using CodSpeed in Rust:
 - [`codspeed`](./crates/codspeed/): The core library used to integrate with Codspeed runners
 
 
-Miam
+Miam Miam
