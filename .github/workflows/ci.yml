@@ -136,7 +136,7 @@ jobs:
           run: cargo codspeed run
           mode: instrumentation
           # token: ${{ secrets.CODSPEED_DEV_TOKEN }}
-          upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
+          upload-url: https://nt18lgxmle.execute-api.eu-west-1.amazonaws.com/upload
           runner-version: '4.3.5-beta.1'
 
   compat-integration-test-walltime:
@@ -172,7 +172,7 @@ jobs:
           run: cargo codspeed run
           mode: walltime
           # token: ${{ secrets.CODSPEED_DEV_TOKEN }}
-          upload-url: ${{ secrets.CODSPEED_DEV_UPLOAD_URL }}/upload
+          upload-url: https://nt18lgxmle.execute-api.eu-west-1.amazonaws.com/upload
           runner-version: '4.3.5-beta.1'
 
   musl-build-check:
