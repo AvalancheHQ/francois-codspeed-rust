@@ -137,7 +137,7 @@ jobs:
           mode: instrumentation
           # token: ${{ secrets.CODSPEED_DEV_TOKEN }}
           upload-url: https://nt18lgxmle.execute-api.eu-west-1.amazonaws.com/upload
-          runner-version: "4.3.5-beta.1"
+          runner-version: "4.3.5-beta.2"
 
   # compat-integration-test-walltime:
   #   runs-on: codspeed-macro-codspeed-francois-dev
